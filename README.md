@@ -6,4 +6,6 @@ All the original gyro drive My Blocks have been incorporated into 1. A new prese
 
 I have created a presentation to [Move The Plate](https://midatlanticrobotics.com/wp-content/uploads/2024/09/Gyro-Drive-My-Blocks-Moving-The-Plate.pdf). I decide not to push new code as that would affect your existing projects. This tells you how to modify the existing plate code, create it from scratch and how to copy code between project files. Hope it helps. 
 
-I and still working on a longer set of presentations and videos to help Coaches and students understand the code and the math. It is all about the math. 
+Versions:
+   spp 25-06-13.llsb - This is a beta release. This code has been fully tested and works as expected. This is a Spike Python code file not a text file. 
+
