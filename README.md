@@ -1,7 +1,7 @@
 # 2025-Gyro-Drive-Spike-Python
 This repo will contain the new Spike Prime Python of the FLL Tools for Spike Prime 3.0 Robots used in FIRST LEGO League Challenge. This version incorporates all the goodies from the blocks version plus severl features unavailable in Blocks. This is a project to provide updated pre-packaged, tested and working on Spike Prime Python for FLL Challenge teams. 
 
-We encourage you to immediately start learnihn Spike Python by access this onl line version for the [Spike Python Knowledge Base](https://spike.legoeducation.com/prime/help/lls-help-python#lls-help-python). This is the same information you would see in the hub, without the need for the Hub itself. Become Pythonic over the summer. 
+We encourage you to immediately start learning Spike Python by access this on-line version for the [Spike Python Knowledge Base](https://spike.legoeducation.com/prime/help/lls-help-python#lls-help-python). This is the same information you would see in the hub, without the need for the Hub itself. Become Pythonic over the summer. 
 
 ## Presentations:<br/>
    [2025 Gyro Drive - Getting Ready and Testing](https://docs.google.com/presentation/d/1amNZU9LRctaRJAooBi0PKXYJnOBhwPlg/edit?usp=drive_link&ouid=101907280092550552910&rtpof=true&sd=true) This presentation is designed as a teaser to show the 2025 Gyro Drive in action. 
