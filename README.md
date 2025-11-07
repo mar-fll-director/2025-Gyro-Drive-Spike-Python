@@ -3,19 +3,26 @@ This repo will contain the new Spike Prime Python of the FLL Tools for Spike Pri
 
 We encourage you to immediately start learning Spike Python by access this on-line version for the [Spike Python Knowledge Base](https://spike.legoeducation.com/prime/help/lls-help-python#lls-help-python). This is the same information you would see in the hub, without the need for the Hub itself. Become Pythonic over the summer. 
 
-## New Version is Multi Motor Movement support
-The newly upload version support multi movement of spinny motors while driving.
-Code Example:
-'''
-    #spinny examples
+## 11-06-25 - New Version is Multi Motor Movement support - spp 25-11-06 beta.llsb
+The newly upload version supports multi movement of spinny motors while driving. It does not use or need async or any advanced concepts. Just integration of ideas. I do not have time to do presentations but wanted to get it out there so you could use it. We used it on my grandson's robot and saved 15 seconds on the first mission leaving us time to do more.
+
+Caviats: 
+1. It works in as much as I had time toe test it. But it is really magical to see all the parts move together. 
+2. Warning: When using it while driving you must be sure the spinny finishes before the robot has gone the full distance.
+3. It does not seen to have any effect of driving distance.   
+
+Code Explanation:
+```
+    #Run a spinny one at a time
     front_lift.run(100,25)                      # spin arm up
     sleep(2)
     front_lift.run(0,50)                        # spin arm down
 
     sleep(2)
-    # in this case we want the arms to move while
+    # In this case we want the arms to move while
     # we drive. This can save a lot of time.
-    # asunc_op says do not spin the motors youself.
+    # asunc_op says collect the setting but
+    # do not spin the motors youself.
     front_lift.run(100,25, async_op = True)             #set front to go up
     rear_lift.run(100,10, async_op = True)              #set back to go up
 
@@ -23,27 +30,26 @@ Code Example:
     # gyro_drive will call the static spinny method 
     # spinny.spin_multi_motors in each loop it will 
     # tell the spinnys to move
-    # Warning: You MUST make sure that the arms are done
+    # 2nd Warning: You MUST make sure that the arms are done
     # before the drive is done. With gyro_drive we are 
     # unable to easily stop the spinnys
     gyro_drive('d', 50, 30,                             # set drive parameters
         spinny_list= [front_lift, rear_lift] )          # and pass a list of spinnys
-
+                                                        # all parts move together
     sleep(2)
-    # imaging using this at the end of your run
-    front_lift.run(0,80, async_op = True)               # set front are to go down
-    rear_lift.run(0,80, async_op = True)                # set back are to go down
+    # imagine using this at the end of your run
+    front_lift.run(0,80, async_op = True)               # set front arm to go down
+    rear_lift.run(0,80, async_op = True)                # set back arm to go down
     # the spinny class has a static method to move 
     # multiple spinnys, without using gyro drive
+    # gyro_drive uses this same method to move the spinnys
     spinny.spin_multi_motors([front_lift,rear_lift])    
-
-
-    #gyro_drive('d', 50, -30, spinny_list= [front_lift, rear_lift] )
 
     exit(0) # this is fun. It causes your code to crash at the end
             # so you do not have to press the stop button
             # it will throw an error but who cares
-'''
+            # saves you time
+```
 
 ## Presentations:<br/>
    [Spike Python Knowledge Base](https://spike.legoeducation.com/prime/help/lls-help-python#lls-help-python) Get started learning Micro Python on the Spike Hub.
