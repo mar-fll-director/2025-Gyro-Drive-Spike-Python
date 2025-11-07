@@ -3,6 +3,46 @@ This repo will contain the new Spike Prime Python of the FLL Tools for Spike Pri
 
 We encourage you to immediately start learning Spike Python by access this on-line version for the [Spike Python Knowledge Base](https://spike.legoeducation.com/prime/help/lls-help-python#lls-help-python). This is the same information you would see in the hub, without the need for the Hub itself. Become Pythonic over the summer. 
 
+## New Version is Multi Motor Movement support
+The newly upload version support multi movement of spinny motors while driving.
+
+Code Example:
+    #spinny examples
+    front_lift.run(100,25)                      # spin arm up
+    sleep(2)
+    front_lift.run(0,50)                        # spin arm down
+
+    sleep(2)
+    # in this case we want the arms to move while
+    # we drive. This can save a lot of time.
+    # asunc_op says do not spin the motors youself.
+    front_lift.run(100,25, async_op = True)             #set front to go up
+    rear_lift.run(100,10, async_op = True)              #set back to go up
+
+    # Now we call gyro_drive. Because there is a list, 
+    # gyro_drive will call the static spinny method 
+    # spinny.spin_multi_motors in each loop it will 
+    # tell the spinnys to move
+    # Warning: You MUST make sure that the arms are done
+    # before the drive is done. With gyro_drive we are 
+    # unable to easily stop the spinnys
+    gyro_drive('d', 50, 30,                             # set drive parameters
+        spinny_list= [front_lift, rear_lift] )          # and pass a list of spinnys
+
+    sleep(2)
+    # imaging using this at the end of your run
+    front_lift.run(0,80, async_op = True)               # set front are to go down
+    rear_lift.run(0,80, async_op = True)                # set back are to go down
+    # the spinny class has a static method to move 
+    # multiple spinnys, without using gyro drive
+    spinny.spin_multi_motors([front_lift,rear_lift])    
+
+
+    #gyro_drive('d', 50, -30, spinny_list= [front_lift, rear_lift] )
+
+    exit(0)
+
+
 ## Presentations:<br/>
    [Spike Python Knowledge Base](https://spike.legoeducation.com/prime/help/lls-help-python#lls-help-python) Get started learning Micro Python on the Spike Hub.
 
