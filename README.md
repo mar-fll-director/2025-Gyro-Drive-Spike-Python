@@ -5,8 +5,8 @@ We encourage you to immediately start learning Spike Python by access this on-li
 
 ## New Version is Multi Motor Movement support
 The newly upload version support multi movement of spinny motors while driving.
-
 Code Example:
+'''
     #spinny examples
     front_lift.run(100,25)                      # spin arm up
     sleep(2)
@@ -40,8 +40,10 @@ Code Example:
 
     #gyro_drive('d', 50, -30, spinny_list= [front_lift, rear_lift] )
 
-    exit(0)
-
+    exit(0) # this is fun. It causes your code to crash at the end
+            # so you do not have to press the stop button
+            # it will throw an error but who cares
+'''
 
 ## Presentations:<br/>
    [Spike Python Knowledge Base](https://spike.legoeducation.com/prime/help/lls-help-python#lls-help-python) Get started learning Micro Python on the Spike Hub.
